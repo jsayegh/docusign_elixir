@@ -6,7 +6,8 @@ defmodule DocuSign.Application do
   use Application
 
   def start(_type, _args) do
-    children = [{DocuSign.APIClient, []}]
+    # children = [{DocuSign.APIClient, []}]
+    children = []
 
     opts = [strategy: :one_for_one, name: DocuSign.Supervisor]
     Supervisor.start_link(children, opts)
